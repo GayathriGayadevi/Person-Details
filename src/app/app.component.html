@@ -1,0 +1,39 @@
+<div class="form-wrapper">
+  <div class="title" *ngIf="personList.length">Existing persons</div>
+  <div *ngFor="let person of personList; let i=index">
+      <div class="left mr-10 mb-10">{{person?.firstName}} {{person?.lastName}}</div>
+      <input type="button" class="left mr-10" value="Edit" (click)="showEditPerson(person.id)" />
+      <input type="button" class="left mr-10" value="Delete" (click)="deletePerson(person.id)" />
+      <div class="clear"></div>
+  </div>
+  <input type="button" class="mt-15" value="Add Person" (click)="showAddPerson()" />
+  <div *ngIf="isAdd || isEdit">
+      <div class="title mt-15">Person Details</div>
+      <div class="detail">
+          First Name: <input type="text" [(ngModel)]="personDetails.firstName">
+      </div>
+      <div class="detail">
+          Last Name: <input type="text" [(ngModel)]="personDetails.lastName">
+      </div>
+      <div class="detail">
+          Email: <input type="text" [(ngModel)]="personDetails.email">
+      </div>
+      <div class="detail">
+          Phone Number: <input type="number" [(ngModel)]="personDetails.phoneNumber">
+      </div>
+      <div class="detail">
+          <div class="left mr-10">Address: </div>
+          <div class="left address">
+            <ng-select
+                [items]="addressList"
+                placeholder="Select Address"
+                [(ngModel)]="personDetails.address">
+            </ng-select>
+          </div>
+          <div class="clear"> </div>
+      </div>
+      <input type="button" class="mt-15 mr-10" *ngIf="isAdd" value="Add" (click)="addPerson()" />
+      <input type="button" class="mt-15 mr-10" *ngIf="isEdit" value="Edit" (click)="editPerson()" />
+      <input type="button" class="mt-15" *ngIf="isAdd || isEdit" value="Cancel" (click)="cancel()" />
+  </div>
+</div>

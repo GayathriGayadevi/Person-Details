@@ -1,0 +1,38 @@
+.form-wrapper {
+    padding: 30px;
+    margin-left: 150px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.detail {
+    margin-bottom: 25px;
+}
+
+.left {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.address {
+    min-width: 155px;
+}
